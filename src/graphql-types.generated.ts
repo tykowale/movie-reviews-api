@@ -9,13 +9,15 @@
 /* eslint-disable */
 
 export class Movie {
-    id: string;
+    id: number;
     name: string;
     description?: Nullable<string>;
 }
 
 export abstract class IQuery {
     abstract allMovies(): Nullable<Movie[]> | Promise<Nullable<Movie[]>>;
+
+    abstract movie(id: number): Nullable<Movie> | Promise<Nullable<Movie>>;
 }
 
 type Nullable<T> = T | null;

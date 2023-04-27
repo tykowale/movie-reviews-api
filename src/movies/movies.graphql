@@ -1,9 +1,10 @@
 type Movie {
-    id: ID!
+    id: Int!
     name: String!
     description: String
 }
 
 type Query {
     allMovies: [Movie!]
+    movie(id: Int!): Movie
 }

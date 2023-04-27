@@ -10,7 +10,7 @@ import { MoviesModule } from 'src/movies/movies.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       playground: false,
-      typePaths: ['./schema.graphql'],
+      typePaths: ['./**/*.graphql'],
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
       definitions: {
         path: join(process.cwd(), 'src/graphql-types.generated.ts'),
