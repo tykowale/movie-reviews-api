@@ -15,9 +15,20 @@ export class Movie {
 }
 
 export abstract class IQuery {
-    abstract allMovies(): Nullable<Movie[]> | Promise<Nullable<Movie[]>>;
+    abstract allMovies(): Movie[] | Promise<Movie[]>;
 
     abstract movie(id: number): Nullable<Movie> | Promise<Nullable<Movie>>;
+
+    abstract review(id: number): Nullable<Review> | Promise<Nullable<Review>>;
+
+    abstract reviewsByMovieId(id: number): Review[] | Promise<Review[]>;
+}
+
+export class Review {
+    id: number;
+    movieId: number;
+    stars: number;
+    description?: Nullable<string>;
 }
 
 type Nullable<T> = T | null;

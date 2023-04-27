@@ -5,6 +5,6 @@ type Movie {
 }
 
 type Query {
-    allMovies: [Movie!]
+    allMovies: [Movie!]!
     movie(id: Int!): Movie
 }

@@ -1,0 +1,11 @@
+type Review {
+    id: Int!
+    movieId: Int!
+    stars: Int!
+    description: String
+}
+
+type Query {
+    review(id: Int!): Review
+    reviewsByMovieId(id: Int!): [Review!]!
+}
