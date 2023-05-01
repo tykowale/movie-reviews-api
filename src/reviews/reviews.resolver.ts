@@ -2,6 +2,7 @@ import { Args, Query, Resolver } from '@nestjs/graphql';
 import { ParseIntPipe } from '@nestjs/common';
 import { Review } from 'src/graphql-types.generated';
 import { ReviewsService } from 'src/reviews/reviews.service';
+import { ResolvableReview } from 'src/reviews/reviews.types';
 
 @Resolver('Review')
 export class ReviewsResolver {
@@ -11,7 +12,7 @@ export class ReviewsResolver {
   async findReview(
     @Args('id', ParseIntPipe)
     id: number,
-  ): Promise<Review | null | undefined> {
+  ): Promise<ResolvableReview | null | undefined> {
     return this.reviewsService.findOne(id);
   }
 
@@ -19,7 +20,7 @@ export class ReviewsResolver {
   async findReviewsByMovieId(
     @Args('id', ParseIntPipe)
     id: number,
-  ): Promise<Review[]> {
+  ): Promise<ResolvableReview[]> {
     return this.reviewsService.findByMovieId(id);
   }
 }

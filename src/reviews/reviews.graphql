@@ -3,6 +3,7 @@ type Review {
     movieId: Int!
     stars: Int!
     description: String
+    movie: Movie!
 }
 
 type Query {

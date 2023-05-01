@@ -5,6 +5,7 @@ import { join } from 'path';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { MoviesModule } from 'src/movies/movies.module';
 import { ReviewsModule } from './reviews/reviews.module';
+import { MoviesReviewsModule } from './movies-reviews/movies-reviews.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ReviewsModule } from './reviews/reviews.module';
     }),
     MoviesModule,
     ReviewsModule,
+    MoviesReviewsModule,
   ],
   controllers: [],
   providers: [],

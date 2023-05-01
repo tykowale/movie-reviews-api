@@ -29,6 +29,7 @@ export class Review {
     movieId: number;
     stars: number;
     description?: Nullable<string>;
+    movie: Movie;
 }
 
 type Nullable<T> = T | null;

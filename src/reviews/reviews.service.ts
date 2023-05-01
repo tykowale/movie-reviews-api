@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { Review } from 'src/graphql-types.generated';
+import { ResolvableReview } from 'src/reviews/reviews.types';
 
 @Injectable()
 export class ReviewsService {
-  private reviews: Review[] = [
+  private reviews: ResolvableReview[] = [
     {
       id: 1,
       movieId: 1,
@@ -26,11 +26,11 @@ export class ReviewsService {
     },
   ];
 
-  async findOne(id: number): Promise<Review | null | undefined> {
+  async findOne(id: number): Promise<ResolvableReview | null | undefined> {
     return this.reviews.find((r) => r.id === id);
   }
 
-  async findByMovieId(id: number): Promise<Review[]> {
+  async findByMovieId(id: number): Promise<ResolvableReview[]> {
     return this.reviews.filter((r) => r.movieId === id);
   }
 }

@@ -4,5 +4,6 @@ import { ReviewsResolver } from './reviews.resolver';
 
 @Module({
   providers: [ReviewsService, ReviewsResolver],
+  exports: [ReviewsService],
 })
 export class ReviewsModule {}
